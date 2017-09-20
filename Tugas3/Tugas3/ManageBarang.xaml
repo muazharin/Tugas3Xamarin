@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Tugas3.ManageBarang">
+    <StackLayout>
+        <ListView x:Name="lsData" HasUnevenRows="False" Header="Header Value" Footer="Footer" ItemSelected="OnSelection">
+            <ListView.HeaderTemplate>
+                <DataTemplate>
+                    <StackLayout Orientation="Horizontal" BackgroundColor="Blue">
+                        <Label Text="Transaction" FontSize="Medium" FontAttributes="Bold" TextColor="White" HorizontalOptions="Start"/>
+                        <Label Text="Date" FontSize="Medium" FontAttributes="Bold" TextColor="White" HorizontalOptions="Center"/>
+                        <Label Text="Amount" FontSize="Medium" FontAttributes="Bold" TextColor="White" HorizontalOptions="End"/>
+                    </StackLayout>
+                </DataTemplate>
+            </ListView.HeaderTemplate>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="{Binding TransBar}" FontSize="Medium" HorizontalOptions="Start"/>
+                            <Label Text="{Binding Tanggal}" FontSize="Medium" HorizontalOptions="CenterAndExpand"/>
+                            <Label Text="{Binding HrgBar}" FontSize="Medium" HorizontalOptions="End"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            <ListView.FooterTemplate>
+                <DataTemplate>
+                    <StackLayout Orientation="Horizontal">
+                        <Button Text="Add new Transaction" Clicked="OnNewClicked" HorizontalOptions="Center"/>
+                    </StackLayout>
+                </DataTemplate>
+            </ListView.FooterTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>
